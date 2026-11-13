@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+run/
+out/
+bin/
+obj/
+# never commit keys or plain evidence
+*.pem
+*.key
+evidence.jsonl

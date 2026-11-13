@@ -1,0 +1,13 @@
+{
+  "note": "Hand-written fixture pages for the offline dry run. Nothing here was fetched from a real site.",
+  "pages": [
+    { "url": "https://shop-a.example/p/fixture-pulse-9070-xt-11348-03-20g", "file": "jsonld-graph.html" },
+    { "url": "https://shop-b.example/p/fixture-nitro-9070-xt", "file": "jsonld-aggregate.html" },
+    { "url": "https://shop-c.example/p/rx9070-16g-a", "file": "jsonld-offer-list.html" },
+    { "url": "https://shop-m.example/netzteile/ep-850g", "file": "microdata.html" },
+    { "url": "https://shop-a.example/p/no-data", "file": "no-data.html" },
+    { "url": "https://shop-b.example/p/broken", "file": "broken-jsonld.html" },
+    { "url": "https://shop-c.example/p/wrong-currency", "file": "wrong-currency.html" },
+    { "url": "https://shop-d1.example/p/ambiguous", "file": "ambiguous.html" }
+  ]
+}

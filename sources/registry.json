@@ -1,0 +1,210 @@
+{
+  "registryVersion": 1,
+  "collectionEnabled": false,
+  "collectionEnabledNote": "Ships false. Set to true only after Andy's legal read of every seller that is enabled below, in a reviewed pull request. While false, every collection, signing, evidence-upload and publishing step exits before it does anything.",
+  "userAgent": "RigmarkPriceBot/0.1 (+https://github.com/Dreko-Coder/rigmark-data; neutral price bands, no AI, obeys robots.txt)",
+  "defaults": {
+    "minCrawlDelaySeconds": 10,
+    "maxPagesPerDomainPerRun": 500,
+    "maxResponseBytes": 5000000,
+    "requestTimeoutSeconds": 30,
+    "maxBackoffRetries": 2,
+    "pauseDomainAfter429": 3
+  },
+  "markets": [
+    { "region": "GB", "currency": "GBP", "taxRatePercent": 20, "pricesIncludeTax": true },
+    { "region": "DE", "currency": "EUR", "taxRatePercent": 19, "pricesIncludeTax": true },
+    { "region": "FR", "currency": "EUR", "taxRatePercent": 20, "pricesIncludeTax": true },
+    { "region": "AU", "currency": "AUD", "taxRatePercent": 10, "pricesIncludeTax": true },
+    { "region": "CA", "currency": "CAD", "taxRatePercent": 0, "pricesIncludeTax": false },
+    { "region": "NL", "currency": "EUR", "taxRatePercent": 21, "pricesIncludeTax": true }
+  ],
+  "sellers": [
+    {
+      "id": "overclockers-uk",
+      "name": "Overclockers UK",
+      "ownershipGroup": "overclockers-uk",
+      "region": "GB",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.overclockers.co.uk/terms-and-conditions.html",
+      "termsNotes": "Keyword search November 12, 2026: no automated-access clause found. Not legally read.",
+      "domains": [
+        {
+          "domain": "www.overclockers.co.uk",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Product pages allowed; /search disallowed; sitemaps listed.",
+          "structuredData": "JSON-LD Product/Offer with price, GBP, stock, MPN, GTIN"
+        }
+      ]
+    },
+    {
+      "id": "alternate-de",
+      "name": "ALTERNATE",
+      "ownershipGroup": "alternate",
+      "region": "DE",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.alternate.de/HILFE/ALTERNATE/AGB",
+      "termsNotes": "AGB keyword search November 12, 2026: no automated-access clause found. Not legally read.",
+      "domains": [
+        {
+          "domain": "www.alternate.de",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Access allowed; /rest/ and *.json disallowed.",
+          "structuredData": "JSON-LD with price, EUR, stock, MPN"
+        }
+      ]
+    },
+    {
+      "id": "mindfactory-de",
+      "name": "Mindfactory",
+      "ownershipGroup": "mindfactory",
+      "region": "DE",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.mindfactory.de/info_center.php/icID/59",
+      "termsNotes": "AGB keyword search November 12, 2026: no automated-access clause found. Not legally read.",
+      "domains": [
+        {
+          "domain": "www.mindfactory.de",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Account paths disallowed; sitemap listed.",
+          "structuredData": "Microdata Product/Offer only"
+        }
+      ]
+    },
+    {
+      "id": "ldlc-group-fr",
+      "name": "LDLC group (LDLC, Materiel.net, Top Achat)",
+      "ownershipGroup": "ldlc-group",
+      "region": "FR",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.ldlc.com/aide/53-informations-legales/",
+      "termsNotes": "Legal notice carries a general 'no reproduction of the site' clause. Database right (EU) also applies. Needs the legal read; written permission is the clean route. The three domains are one owner and count as one seller.",
+      "domains": [
+        {
+          "domain": "www.ldlc.com",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Product pages allowed; sitemaps listed.",
+          "structuredData": "JSON-LD with price, EUR, stock, MPN"
+        },
+        {
+          "domain": "www.materiel.net",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Product pages allowed; sitemaps listed.",
+          "structuredData": "JSON-LD with price, EUR, stock, MPN"
+        },
+        {
+          "domain": "www.topachat.com",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Product pages allowed; sitemaps listed.",
+          "structuredData": "JSON-LD with price, EUR, stock, MPN"
+        }
+      ]
+    },
+    {
+      "id": "grosbill-fr",
+      "name": "Grosbill (Cybertek group)",
+      "ownershipGroup": "cybertek-group",
+      "region": "FR",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.grosbill.com/informations-legales",
+      "termsNotes": "Legal notice carries the same general no-reproduction clause. Needs the legal read. Other Cybertek domains (cybertek.fr) would count as the same seller.",
+      "domains": [
+        {
+          "domain": "www.grosbill.com",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "/recherche and /api/ disallowed; Crawl-delay: 2 (our 10 s minimum is slower, so it applies).",
+          "structuredData": "JSON-LD with price, EUR, stock, MPN, GTIN"
+        }
+      ]
+    },
+    {
+      "id": "umart-au",
+      "name": "Umart",
+      "ownershipGroup": "umart",
+      "region": "AU",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.umart.com.au/help/terms-conditions-1076",
+      "termsNotes": "Terms carry a general 'may not reproduce Material' clause. Needs the legal read.",
+      "domains": [
+        {
+          "domain": "www.umart.com.au",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Search disallowed; sitemap listed.",
+          "structuredData": "JSON-LD with price, AUD, stock"
+        }
+      ]
+    },
+    {
+      "id": "ple-au",
+      "name": "PLE Computers",
+      "ownershipGroup": "ple",
+      "region": "AU",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.ple.com.au/TermsConditions",
+      "termsNotes": "Keyword search November 12, 2026: no automated-access clause found. Not legally read.",
+      "domains": [
+        {
+          "domain": "www.ple.com.au",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "No rules published (everything allowed); our 10 s minimum applies.",
+          "structuredData": "JSON-LD with price, AUD, stock, MPN"
+        }
+      ]
+    },
+    {
+      "id": "canadacomputers-ca",
+      "name": "Canada Computers",
+      "ownershipGroup": "canadacomputers",
+      "region": "CA",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.canadacomputers.com/en/content/15/terms-conditions",
+      "termsNotes": "Keyword search November 12, 2026: no automated-access clause found. Not legally read.",
+      "domains": [
+        {
+          "domain": "www.canadacomputers.com",
+          "enabled": false,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "Query filters disallowed.",
+          "structuredData": "JSON-LD with price, CAD, stock, GTIN"
+        }
+      ]
+    },
+    {
+      "id": "megekko-nl",
+      "name": "Megekko",
+      "ownershipGroup": "megekko",
+      "region": "NL",
+      "status": "proposed - legal read pending",
+      "enabled": false,
+      "termsUrl": "https://www.megekko.nl/info/scrapers",
+      "termsNotes": "Published crawler policy: at most one automated request an hour. The delay below enforces it (robots.txt and sitemap reads count as requests).",
+      "domains": [
+        {
+          "domain": "www.megekko.nl",
+          "enabled": false,
+          "crawlDelaySeconds": 3600,
+          "maxRequestsPerRun": 1,
+          "robotsNotes": "Sitemaps listed. Structured data not checked (their limit).",
+          "structuredData": "Not checked"
+        }
+      ]
+    }
+  ]
+}

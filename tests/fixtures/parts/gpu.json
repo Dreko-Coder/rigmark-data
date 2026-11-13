@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "category": "gpu",
+  "datasetVersion": "2026-11-12",
+  "sources": [
+    {
+      "id": "fixture-maker",
+      "url": "https://example.com/spec",
+      "publisher": "Fixture maker (test data)",
+      "licence": "own",
+      "retrievedDate": "2026-11-12"
+    }
+  ],
+  "parts": [
+    {
+      "id": "fixture-gpu-alpha",
+      "brand": "AMD",
+      "model": "Radeon RX 9070 XT",
+      "partNumbers": [],
+      "gtins": [],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 599,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [
+        {
+          "brand": "Sapphire",
+          "name": "Fixture Pulse 9070 XT",
+          "partNumbers": [
+            "11348-03-20G"
+          ],
+          "gtins": [
+            "4000000000013"
+          ],
+          "sourceId": "fixture-maker"
+        },
+        {
+          "brand": "Sapphire",
+          "name": "Fixture Nitro 9070 XT",
+          "partNumbers": [
+            "11348-01-20G"
+          ],
+          "gtins": [
+            "4000000000020"
+          ],
+          "sourceId": "fixture-maker"
+        }
+      ],
+      "recognitionOnly": false
+    },
+    {
+      "id": "fixture-gpu-beta",
+      "brand": "AMD",
+      "model": "Radeon RX 9070",
+      "partNumbers": [],
+      "gtins": [],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 549,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [
+        {
+          "brand": "PowerColor",
+          "name": "Fixture Hellhound 9070",
+          "partNumbers": [
+            "RX9070-16G-A"
+          ],
+          "gtins": [
+            "4000000000037"
+          ],
+          "sourceId": "fixture-maker"
+        }
+      ],
+      "recognitionOnly": false
+    },
+    {
+      "id": "fixture-gpu-gamma",
+      "brand": "AMD",
+      "model": "Radeon RX 9060 XT 16GB",
+      "partNumbers": [],
+      "gtins": [],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 349,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [
+        {
+          "brand": "Example Boards",
+          "name": "Gamma card",
+          "partNumbers": [
+            "DUP-12345"
+          ],
+          "gtins": [],
+          "sourceId": "fixture-maker"
+        }
+      ],
+      "recognitionOnly": false
+    },
+    {
+      "id": "fixture-gpu-delta",
+      "brand": "AMD",
+      "model": "Radeon RX 9060 XT 8GB",
+      "partNumbers": [],
+      "gtins": [],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 299,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [
+        {
+          "brand": "Example Boards",
+          "name": "Delta card",
+          "partNumbers": [
+            "DUP-12345"
+          ],
+          "gtins": [],
+          "sourceId": "fixture-maker"
+        }
+      ],
+      "recognitionOnly": false
+    }
+  ]
+}
