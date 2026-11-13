@@ -1,0 +1,97 @@
+# Collection, signing and publishing. SHIPS DISABLED:
+# - no schedule trigger: it only runs when someone starts it by hand (workflow_dispatch);
+# - the guard job reads sources/registry.json, and every other job is skipped unless "collectionEnabled" is true
+#   (it ships false). Each pricebot command also refuses on its own while collection is disabled.
+# Enabling it is Andy's step after the legal read (README "Enabling collection").
+name: collect (disabled until the legal read)
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Build, sign and publish the price file (false = D1 dry run: collect and report only)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      enabled: ${{ steps.guard.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: guard
+        run: python -m pricebot guard
+
+  collect:
+    needs: guard
+    if: needs.guard.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    permissions:
+      contents: write # release asset upload only
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install age
+        run: sudo apt-get update -q && sudo apt-get install -y -q age
+
+      - name: Collect (polite, allow-listed domains only) and write the dry-run report
+        run: python -m pricebot collect --parts parts --out run --minutes 120
+
+      - name: Encrypt the evidence (the plain file never leaves the runner)
+        run: |
+          python -m pricebot encrypt-evidence --in run/evidence.jsonl --out run/evidence.jsonl.age
+          rm -f run/evidence.jsonl
+
+      - name: Exchange rates (ECB)
+        if: inputs.publish
+        run: python -m pricebot fetch-fx --out run/ecb-daily.xml
+
+      - name: Last published file (for sequence and the movement gate)
+        if: inputs.publish
+        run: |
+          mkdir -p out
+          gh release download --repo "$GITHUB_REPOSITORY" --pattern price-file.json --dir out || echo "no previous file"
+
+      - name: Build, gate and sign (a failed gate keeps the last file)
+        if: inputs.publish
+        env:
+          PRICE_SIGNING_KEY: ${{ secrets.PRICE_SIGNING_KEY }}
+          PRICE_KEY_ID: ${{ vars.PRICE_KEY_ID }}
+        run: python -m pricebot build --observations run/observations.jsonl --parts parts --fx run/ecb-daily.xml --seed seed --out out/price-file.json --report run/build-report.json
+
+      - name: Publish as a release asset
+        if: inputs.publish
+        run: |
+          python -m pricebot guard | grep -qx "collection enabled"
+          tag="prices-$(date -u +%Y%m%d)-${GITHUB_RUN_ID}"
+          gh release create "$tag" out/price-file.json --repo "$GITHUB_REPOSITORY" --title "$tag" --notes "Signed price file. Medians and bands only." --latest
+
+      - name: Keep the reports and the encrypted evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-${{ github.run_id }}
+          path: |
+            run/dry-run-report.md
+            run/dry-run-report.json
+            run/build-report.json
+            run/evidence.jsonl.age
+          if-no-files-found: ignore
+          retention-days: 90

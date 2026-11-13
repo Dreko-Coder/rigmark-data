@@ -1,0 +1,4 @@
+# age public key (recipient) that private evidence is encrypted to before any upload.
+# PLACEHOLDER: Andy replaces the line below with his own key (from `age-keygen`; the private half stays offline with him).
+# Until then every evidence upload refuses to run.
+age1-PLACEHOLDER-owner-must-replace

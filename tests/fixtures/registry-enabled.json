@@ -1,0 +1,157 @@
+{
+  "registryVersion": 1,
+  "collectionEnabled": true,
+  "userAgent": "RigmarkPriceBot/0.1 (+https://github.com/Dreko-Coder/rigmark-data; test fixture)",
+  "defaults": {
+    "minCrawlDelaySeconds": 10,
+    "maxPagesPerDomainPerRun": 500,
+    "maxResponseBytes": 200000,
+    "requestTimeoutSeconds": 30,
+    "maxBackoffRetries": 2,
+    "pauseDomainAfter429": 3
+  },
+  "markets": [
+    {
+      "region": "GB",
+      "currency": "GBP",
+      "taxRatePercent": 20,
+      "pricesIncludeTax": true
+    },
+    {
+      "region": "DE",
+      "currency": "EUR",
+      "taxRatePercent": 19,
+      "pricesIncludeTax": true
+    },
+    {
+      "region": "CA",
+      "currency": "CAD",
+      "taxRatePercent": 0,
+      "pricesIncludeTax": false
+    }
+  ],
+  "sellers": [
+    {
+      "id": "shop-a",
+      "name": "shop-a",
+      "ownershipGroup": "group-a",
+      "region": "GB",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-a.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-a.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "shop-b",
+      "name": "shop-b",
+      "ownershipGroup": "group-b",
+      "region": "GB",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-b.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-b.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "shop-c",
+      "name": "shop-c",
+      "ownershipGroup": "group-c",
+      "region": "GB",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-c.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-c.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "shop-d",
+      "name": "shop-d",
+      "ownershipGroup": "group-d",
+      "region": "GB",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-d1.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-d1.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        },
+        {
+          "domain": "shop-d2.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "shop-m",
+      "name": "shop-m",
+      "ownershipGroup": "group-m",
+      "region": "DE",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-m.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-m.example",
+          "enabled": true,
+          "crawlDelaySeconds": 10,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "shop-slow",
+      "name": "shop-slow",
+      "ownershipGroup": "group-slow",
+      "region": "DE",
+      "status": "fixture",
+      "enabled": true,
+      "termsUrl": "https://shop-slow.example/terms",
+      "termsNotes": "fixture",
+      "domains": [
+        {
+          "domain": "shop-slow.example",
+          "enabled": true,
+          "crawlDelaySeconds": 3600,
+          "robotsNotes": "fixture",
+          "structuredData": "fixture",
+          "maxRequestsPerRun": 1
+        }
+      ]
+    }
+  ]
+}

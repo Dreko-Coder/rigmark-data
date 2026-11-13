@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written fixture in the ECB daily reference format; the rates are made up for tests. -->
+<gesmes:Envelope xmlns:gesmes="http://www.gesmes.org/xml/2002-08-01" xmlns="http://www.ecb.int/vocabulary/2002-08-01/eurofxref">
+  <gesmes:subject>Reference rates</gesmes:subject>
+  <Cube><Cube time="2026-11-11">
+    <Cube currency="USD" rate="1.1000"/>
+    <Cube currency="GBP" rate="0.8500"/>
+    <Cube currency="AUD" rate="1.6500"/>
+    <Cube currency="CAD" rate="1.5000"/>
+  </Cube></Cube>
+</gesmes:Envelope>

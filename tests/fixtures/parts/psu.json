@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "category": "psu",
+  "datasetVersion": "2026-11-12",
+  "sources": [
+    {
+      "id": "fixture-maker",
+      "url": "https://example.com/spec",
+      "publisher": "Fixture maker (test data)",
+      "licence": "own",
+      "retrievedDate": "2026-11-12"
+    }
+  ],
+  "parts": [
+    {
+      "id": "fixture-psu-gold",
+      "brand": "Example Power",
+      "model": "EP 850 Gold",
+      "partNumbers": [
+        "EP-850G"
+      ],
+      "gtins": [
+        "4000000000044"
+      ],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 129.99,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [],
+      "recognitionOnly": false
+    },
+    {
+      "id": "fixture-psu-silver",
+      "brand": "Example Power",
+      "model": "EP 650 Silver",
+      "partNumbers": [
+        "EP-650S"
+      ],
+      "gtins": [],
+      "launchDate": "2026-01-01",
+      "msrp": {
+        "amount": 89.99,
+        "currency": "USD",
+        "sourceId": "fixture-maker",
+        "date": "2026-01-01"
+      },
+      "tier": 10,
+      "specs": {},
+      "fieldSources": {},
+      "unavailableRegions": [],
+      "skus": [],
+      "recognitionOnly": false
+    }
+  ]
+}
